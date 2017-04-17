@@ -1,0 +1,72 @@
+<ui-view class="ng-scope"><div class="container ng-scope">
+
+
+  <div class="container ng-scope">
+
+<div ng-if="signUpCtrl.signUpSuccess" class="ng-scope">Your information has been saved</div>
+  
+  </div>
+	<div ng-if="!signUpCtrl.signUpSuccess" class="ng-scope">
+	<h3>Sign up for our Company Web</h3>
+	    <fieldset>
+	      <legend></legend>
+	      <form name="signUpForm" class="form ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-pattern" novalidate="">
+
+	      <div class="row">
+	      	<div class="form-group col-xs-6 col-lg-3">
+	      		<label for="firstname">First Name</label>
+		        <input class="form-input form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" type="text" name="firstname" placeholder="First Name" ng-model="signUpCtrl.user.firstname" required="">
+
+		          <br>
+		        </div>
+		    </div>
+
+			<div class="row">
+	      	<div class="form-group col-xs-6 col-lg-3">
+		        <label for="lastname">Last Name</label>
+		        <input class="form-input form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" type="text" name="lastname" placeholder="Last Name" ng-model="signUpCtrl.user.lastname" required="">
+
+		          <br>
+		   		</div>
+	      	</div>
+
+	    <div class="row">
+	    	<div class="form-group col-xs-6 col-lg-3">
+	    	<label for="email">Email Address</label>
+	        <input class="form-input form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" type="email" name="email" placeholder="Email Address" ng-model="signUpCtrl.user.email" required="">
+
+	          <br>
+	        </div>
+		</div>
+
+		<div class="row">
+	      	<div class="form-group col-xs-6 col-lg-3">
+	        <label for="phone">Phone Number</label>
+	        <input class="form-input form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern" type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signUpCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required="">
+	          <br>
+	    	</div>
+	    </div>
+
+	    <div class="row">
+	    	<div class="form-group col-xs-6 col-lg-3">
+	    	<label for="favitem">Favourite Item</label>
+
+	        <input class="form-input form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" type="text" name="favitem" placeholder="Item code" ng-model="signUpCtrl.favItemShortName" ng-model-options="{ debounce: 800 }" required="" item-exists="">
+
+	          <br>
+	    	</div>
+	    </div>
+
+	    <div class="row">
+		    <div class="form-group col-xs-6 col-lg-3">
+		        <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()" disabled="disabled">Submit</button>
+
+		    </div>
+		</div>
+
+	      </form>
+	    </fieldset>
+
+	</div>
+
+</div></ui-view>
